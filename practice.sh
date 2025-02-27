@@ -153,7 +153,198 @@
 
 ################################################################################################################################################
 # For Loop
-for i in 1 2 3 4 5 6 7 8 9 10
-do
-   echo "Number is $i"
-done
+# for i in 1 2 3 4 5 6 7 8 9 10
+# do
+#    echo "Number is $i"
+# done
+
+# for name in Arsalan Ali Mujtaba
+# do
+#    echo "Name is $name"
+# done
+
+# for i in {1..100}
+# do
+#    echo "Number is $i"
+# done
+
+# For loop with file handling
+# FILE="new-1.txt"
+# for name in $(cat $FILE)
+# do                
+#    echo "Name is $name"
+# done
+
+# myArray=(1 2 3 4 5 6 66 77 Hello "Hello Arsalan" "Hello Buddy!")
+# length=${#myArray[*]}
+
+# for(( i=0;i<$length;i++ ))
+# do
+#    echo "Value of array is: ${myArray[$i]}"
+# done
+
+
+################################################################################################################################################
+# While Loop (run until the condition is true)
+# count=0
+# read -p "Enter a number: " num
+
+# while [ $count -le $num ]
+# do
+#    echo "Value of count Variable is $count"
+#    let count++
+# done
+
+# While Loop  with file handling
+# FILE="new-1.txt"
+# while read FILE
+# do
+#    echo "Value from file is: $FILE"
+# done < $FILE
+
+
+################################################################################################################################################
+# Until Loop (stop when the condition is True)
+# a=10
+# until [ $a -eq 1 ]
+# do
+#    echo "Value of A is: $a"
+#    let a--
+# done
+
+
+################################################################################################################################################
+# Infinite Loop
+# while true
+# do
+#    echo "Hi!"
+#    sleep 2s
+# done
+
+# for (( ;; ))
+# do
+#    echo "Hi Buddy!"
+#    sleep 0.5s
+# done
+
+
+################################################################################################################################################
+# To read data from a CSV file
+# while IFS="," read id name age
+# do
+#    echo "Id is: $id"
+#    echo "Name is: $name"
+#    echo "Age is: $age"
+# done < test.csv
+
+
+################################################################################################################################################
+# Functions
+# function welcomeNote () {
+#    echo "--------------------------" 
+#    echo "Welcome" 
+#    echo "--------------------------" 
+# }
+# # To call a function
+# welcomeNote
+
+# welcomeNote () {
+#    echo "--------------------------" 
+#    echo "Welcome" 
+#    echo "--------------------------" 
+# }
+# # To call a function
+# welcomeNote
+# Both Methods syntax are correct
+
+# function welcomeNote () {
+#    echo "--------------------------------------------"
+#    echo "Welcome $1 $2" # arguments are accessible through $1, $2,...
+#    echo "Age is: $3"
+#    echo "--------------------------------------------" 
+# }
+
+# welcomeNote Arsalan Khan 20
+# welcomeNote Ali Abdal 23
+# welcomeNote Ahmed Amin 37
+
+
+################################################################################################################################################
+# Auguments in Scripting
+# echo "First argument is $1"
+# echo "Second argument is $2"
+
+# echo "All the arguments are $@" ### Too access all the arguments use ($@)
+# echo "Number of arguments are $#" ### Too access number of arguments use ($#)
+
+# # For loop to access the values from arguments
+# for filename in $@
+# do
+#    echo "Copying file - $filename"
+# done
+
+
+################################################################################################################################################
+# Shifting Arguments, (When we pass multiple arguments, we can shift.)
+# echo "Creating user..."
+# echo "Username is $1"
+# shift
+# echo "Description is $@"
+
+
+################################################################################################################################################
+# Useful Concepts
+# -----------------------------------------------------------------------
+# -- break: to stop the loop
+
+# Eample (We just need to confirm if a given number is present or not)
+# no=6
+# for i in 11 23 44 68 77 6 66 23 404
+# do
+#    # Break the loop if number found
+#    if [ $no -eq $i ]
+#    then
+#       echo "$no is found!!!"
+#       break
+#    fi
+#    echo "Number is $i"
+# done
+
+
+# ------------------------------------------------------------------------
+
+# -- continue: to stop current iteration of loop and start next iteration
+
+# Example (Suppose we only need to print odd no.)
+# for i in 1 2 3 4 5 6 7 8 9 10
+# do
+#    let r=$i%2
+#    if [ $r -eq 0 ]
+#    then
+#       continue
+#    fi
+#    echo "Odd number is $i"
+# done
+
+
+# -------------------------------------------------------------------------
+# -- sleep: To create delay between two executions ex: sleep1s/1m
+
+
+# -------------------------------------------------------------------------
+# -- exit: to stop script at a point
+# if [ $# -eq 0 ]
+# then 
+#    echo "Please provide atleast one environment"
+#    exit 0
+# fi
+
+# echo "First Argument is: $1"
+# echo "Second Argument is: $2"
+
+# echo "All the arguments are - $@"
+# echo "Number of arguments are - $#"
+
+
+# -------------------------------------------------------------------------
+# exit status $? - gives you status of previous command if that was successfull
