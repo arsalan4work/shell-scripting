@@ -348,3 +348,65 @@
 
 # -------------------------------------------------------------------------
 # exit status $? - gives you status of previous command if that was successfull
+
+# read -p "Which site you want to check?: " site
+# ping -c 1 $site
+# sleep 5s
+
+# if [ $? -eq 0 ]
+# then 
+#    echo "Successfully connected to $site"
+# else
+#    echo "Unable to connent! $site"
+# fi
+
+
+# -------------------------------------------------------------------------
+# basename - strip directory info and only give filename
+
+# -------------------------------------------------------------------------
+# dirname - strip the filename and gives directory path
+
+# -------------------------------------------------------------------------
+# realpath - gives you full path for a file
+
+# -------------------------------------------------------------------------
+# BASH VARIABLES!
+# RANDOM - A random inntegar between 0 and 32767 is generated
+# echo $RANDOM
+# Generating random number between 1-6
+# num=$(( $RANDOM % 6 + 1 ))
+# echo "Number is $num"
+
+# -------------------------------------------------------------------------
+# UID - User id of the user logged in
+# echo $UID
+# if [ $UID -eq 0 ]
+# then 
+#    echo "User is root"
+# else 
+#    echo "User is not root"
+# fi
+
+
+# -------------------------------------------------------------------------
+# we can redirect the output to
+# /dev/null
+# example: 
+# #cd /root &> /dev/null
+
+# -------------------------------------------------------------------------
+# Print the name of the Script like
+# echo "The name of the script is ${0}"
+
+# -------------------------------------------------------------------------
+# Log Messages
+# if you want to maintain the logging for your script, you can logger in your script.
+# you can find the logs under
+# /vsr/logs/Messages
+
+# -------------------------------------------------------------------------
+# DEBUGGING SCRIPTS
+# set -x
+# if we want to exit our script when a command fail
+# set -e
